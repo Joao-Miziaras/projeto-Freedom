@@ -13,6 +13,7 @@ body{
 .header{
     /* border: 2px solid rgb(255, 0, 0); */
     background-color: black;
+    position: relative;
     display: flex;
 }
 .header .container{
@@ -75,15 +76,55 @@ li{
     color: rgb(0, 0, 0);
     border:2px solid rgb(255, 255, 255);
   }
-.imagemC{
-    width: 100vw;
-    height: 81vh;
-    border-bottom: 1px solid #d3b8d4;
-    border-top: 1px solid #d3b8d4;
+
+.corpo{
+    display:flex;
 }
-.impacto{
+
+.imgCorpo{
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: url(../Imagens/wal.jpg);
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
     
 }
+.impacto{
+    position: relative;
+    max-width: 300px;
+    padding: 60px;
+    margin-left: 150px;
+    top: -30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.9);
+    overflow: hidden;
+    color:#000;
+}
+
+
+.impacto:before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: url(../Imagens/wal.jpg);
+    background-attachment: fixed;
+    filter: blur(4px);
+}
+
+.impacto p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 48px;
+    color: white;
+    z-index: 2;
+}
+
 /* barra de scrol diferente */
 ::-webkit-scrollbar {
     width: 10px;
