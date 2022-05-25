@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/design.css">
+</head>
+<body>
+    <!--Começo do header-->
+    <div class="header">
+        <div class="container">
+                <a href="Home.html"><img class="logo" src="imagens/logo vazio.png" alt=""></a>
+            
+            <div class="navbar">
+                    <ul>
+                            <a href="">
+                                <li>Simulador</li>
+                            </a>
+                            <a href="">
+                                <li>Planos</li>
+                            </a>
+                            <a href="">
+                                <li>Faq</li>
+                            </a>
+                            <a href="">
+                                <li>Contato</li>
+                            </a>
+                    </ul>
+            </div>
+            <div class="navbar-logCad">
+                <ul>
+                    <li><button onclick="log()" class="loginBu"><a href="login.html">login</a> </button></li>
+                    <li><button class="cadastroBu"><a href="cadastro.html">Cadastre-se</a> </button></li>
+                </ul>
+            </div>
+
+        </div>    
+    </div>
+<!--Final do header-->
+<!--Começo do login-->
+<div class="login">
+
+    <div class="container">
+        <div class="cardinf">
+            <h1>Login</h1>
+            <h3>Insira suas informações para poder logar no site</h3>
+            <h4>Email</h4>
+            <input type="email" name="" id="email_input" placeholder="seuemail@gmail.com">
+            <h4>Senha</h4>
+            <input type="password" name="" id="senha_input" placeholder="**************">
+            <button class="entrarbu" onclick="entrar()">Entrar</button>
+            <h6><a href="cadastro.html">Não tem conta? faça o cadastro</a></h6>
+        </div>
+    </div>
+</div>
+<!--Final do login-->
+<!--Começo do footer-->
+<div class="footer">
+    <p>© 2022 João Pedro Miziara All rights reserved.</p>
+</div>
+</body>
+</html>
+<script>
+
+
+    function entrar() {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert("Insira suas informações");
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
