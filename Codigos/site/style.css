@@ -76,13 +76,7 @@ li{
     border:2px solid rgb(255, 255, 255);
   }
 /* -------------------------------------------------------------------------------------------------------------------- */
-.corpo .container .impacto{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-
-}  
 .imgCorpo{
       display: flex;
       justify-content: space-between;
@@ -101,19 +95,31 @@ li{
     box-shadow: 2px 4px 30px rgba(0,0,0,0.1);
     backdrop-filter: blur(4.5px);
     -webkit-backdrop-filter: blur(4.5px);
-    width: 30vw;
-    z-index: 1;
+    width: 27vw;
     border: 2px solid black;
-    padding: 2px 4px
-;
+    padding: 2px 4px;
+    margin-top: 17vh;
+    margin-left: 1vw;
 }
 .paragrafo{
     display: flex;
     color: white;
     font-size: 7vh;
-    letter-spacing: 11px;
+    letter-spacing: 0.7vw;
+    padding-left: 1vw;
+}
+p{
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    color: white;
+}
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 /* barra de scrol diferente */
