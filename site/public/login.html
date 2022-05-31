@@ -11,7 +11,7 @@
     <script src="./js/funcoes.js"></script>
 
     <!-- <link rel="icon" href="./assets/icon/favicon.ico"> -->
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <link
@@ -26,15 +26,15 @@
     <div class="header">
         <div class="container">
             <div class="logo">            
-                <a href="index.html"><img class="logoIMG" src="../public/assets/Imagens/LogoFreedom.png" alt="logo"></a>
+                <a href="index.html"><img class="logoIMG" src="./assets/Imagens/LogoFreedom.png" alt="logo"></a>
             </div>
             <div class="navbarLog">
                 <ul>
                     <li>
-                        <button class="loginBu">Logar-se</button>
+                        <button class="loginBu" onclick="levarlog()">Logar-se</button>
                     </li>
                     <li>
-                        <button class="cadastroBu">Cadastrar-se</button>
+                        <button class="cadastroBu" onclick="levarcad()">Cadastrar-se</button>
                     </li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
     </div>
 
 
-    <div class="corpo">
+    <div class="corpoloca">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="imgCorpo">
-            <img class="imagemC" src="../public/assets/Imagens/wal2.jpg" alt="">
+            <img class="imagemC" src="./assets/Imagens/wal2.jpg" alt="">
         </div>    
     </div>
 
@@ -174,6 +174,17 @@
 
     function sumirMensagem() {
         cardErro.style.display = "none"
+    }
+
+    function levarlog(){
+        setTimeout(() => {
+                    window.location = "login.html";
+                }, "1000")
+    }
+    function levarcad(){
+        setTimeout(() => {
+                    window.location = "cadastro.html";
+                }, "1000")
     }
 
 </script>

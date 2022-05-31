@@ -89,6 +89,13 @@ li{
     border-bottom: 1px solid #d3b8d4;
     border-top: 1px solid #d3b8d4;
 }
+.imagemCad{
+    display: flex;
+    width: 100vw;
+    height: 110vh;
+    border-bottom: 1px solid #d3b8d4;
+    border-top: 1px solid #d3b8d4;
+}
 .impacto{
     display: flex;
     position: absolute;
@@ -155,13 +162,17 @@ a:hover{
 }
 /*--------------------------------------------------------------------------------------------------------------------------------------*/
 /* Login */
-.corpo .container{
-    display: flex;
+.corpoloca .container{
     justify-content: center;
 }
+.cardLog{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 .cards{
-    width: 50vw;
-    height: 50vh;
+    width: 40vw;
+    height: 70vh;
     display: flex;
     position: absolute;
     background: rgba(244,217,217,0.05);
@@ -170,8 +181,8 @@ a:hover{
     -webkit-backdrop-filter: blur(4.5px);
     border: 2px solid black;
     justify-content: center;
-    margin-top: 20vh;
     color: #fff;
+    margin-top: 5vh;
 }
 .cardLog input{
     height: 4vh;
@@ -209,6 +220,8 @@ a:hover{
     width: 50px;
   }
 .botao{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     background-color: rgb(0, 0, 0);
     border: none;
     color: rgb(255, 255, 255);
@@ -228,3 +241,17 @@ a:hover{
     color: rgb(0, 0, 0);
     border:2px solid rgb(0, 0, 0);
   }
+  .cardscad{
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    background: rgba(244,217,217,0.05);
+    box-shadow: 2px 4px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border: 2px solid black;
+    justify-content: center;
+    color: #fff;
+    margin-top: 5vh;
+}

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Cadastro</title>
+    <title>Cadastro</title>
 
 
     <script src="./js/funcoes.js"></script>
@@ -22,63 +22,58 @@
 
 <body>
 
-    <!--header inicio-->
+    <!--Header-->
+
     <div class="header">
         <div class="container">
-            <h1 class="titulo">AcquaTec</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="./index.html">
-                        Inicial
-                    </a>
-                </li>
-                <li>
-                    <a href="./simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li class="agora">
-                    <a href="./cadastro.html">Cadastro</a>
-                </li>
-            </ul>
+            <div class="logo">            
+                <a href="index.html"><img class="logoIMG" src="./assets/Imagens/LogoFreedom.png" alt="logo"></a>
+            </div>
+            <div class="navbarLog">
+                <ul>
+                    <li>
+                        <button class="loginBu" onclick="levarlog()">Logar-se</button>
+                    </li>
+                    <li>
+                        <button class="cadastroBu" onclick="levarcad()">Cadastrar-se</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <!--header fim-->
 
 
-    <div class="banner ">
+    <div class="corpoloca">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
         </div>
-        <div class="container tamanho-conteudo">
-            <div class="card medio">
-                <h2>Bem-vindo!</h2>
-                <div class="formulario">
+        <div class="container">
+            <div class="cardscad">
+                <div class="cardLog">
 
-                    <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-
-                    <span class="tipo_campo">Nome:</span>
+                    
+                    <h1>Nome:</h1>
                     <input id="nome_input" type="text" placeholder="Seu nome">
 
-                    <span class="tipo_campo">E-mail:</span>
-                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+                    <h1>E-mail:</h1>
+                    <input id="email_input" type="email" placeholder="email@gmail.com">
 
-                    <span class="tipo_campo">Senha:</span>
+                    <h1>Data nascimento:</h1>
+                    <input id="datanasc_input" type="text" placeholder="2010-10-10">
+
+                    <h1>Senha:</h1>
                     <input id="senha_input" type="password" placeholder="******">
 
-                    <span class="tipo_campo">Confirmação da Senha:</span>
+                    <h1>Confirmar senha:</h1>
                     <input id="confirmacao_senha_input" type="password" placeholder="******">
 
-                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                    <button class="botao" onclick="cadastrar()">Cadastrar</button>
+
 
                 </div>
+
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>
@@ -88,16 +83,33 @@
                 </div>
             </div>
         </div>
+        <div class="imgCorpo">
+            <img class="imagemCad" src="./assets/Imagens/wal2.jpg" alt="">
+        </div>    
     </div>
 
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+            <div class="footerbar">
+                <ul>
+                    <a href="">
+                        <li>Sobre nós</li>
+                    </a>
+                    <a href="">
+                        <li>Direitos legais</li>
+                    </a>
+                    <a href="">
+                        <li>Artistas</li>
+                    </a>
+                    <a href="">
+                        <li>Como funciona o forum</li>
+                    </a>
+                </ul>
+            </div>    
         </div>
     </div>
     <!--footer fim-->
-
 
 </body>
 
@@ -112,9 +124,10 @@
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var datanascVar = datanasc_input.value
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || datanascVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -136,7 +149,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                datanascServer: datanascVar
             })
         }).then(function (resposta) {
 
@@ -168,4 +182,14 @@
         cardErro.style.display = "none"
     }
 
+    function levarlog(){
+        setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+    }
+    function levarcad(){
+        setTimeout(() => {
+                    window.location = "cadastro.html";
+                }, "2000")
+    }
 </script>

@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="header">
         <div class="container">
             <div class="logo">            
-                <a href="index.html"><img class="logoIMG" src="../public/assets/Imagens/LogoFreedom.png" alt="logo"></a>
+                <a href="index.html"><img class="logoIMG" src="./assets/Imagens/LogoFreedom.png" alt="logo"></a>
             </div>
             <div class="navbarLog">
                 <ul>
                     <li>
-                        <button class="loginBu">Logar-se</button>
+                        <button class="loginBu" onclick="levarlog()">Logar-se</button>
                     </li>
                     <li>
-                        <button class="cadastroBu">Cadastrar-se</button>
+                        <button class="cadastroBu" onclick="levarcad()">Cadastrar-se</button>
                     </li>
 
                 </ul>
@@ -33,7 +33,7 @@
             </div>
         </div>
             <div class="imgCorpo">
-                <img class="imagemC" src="../public/assets/Imagens/wal.jpg" alt="">
+                <img class="imagemC" src="./assets/Imagens/wal.jpg" alt="">
         </div>    
     </div>
     <div class="footer">
@@ -58,3 +58,16 @@
     </div>
     </body>
 </html>
+
+<script>
+    function levarlog(){
+        setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+    }
+    function levarcad(){
+        setTimeout(() => {
+                    window.location = "cadastro.html";
+                }, "2000")
+    }
+</script>
