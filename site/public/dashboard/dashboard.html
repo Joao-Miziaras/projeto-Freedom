@@ -16,29 +16,58 @@
         rel="stylesheet">
 </head>
 <body>
-    <div class="header">
+
+
+    <div class="headerAft">
+        <div id="menus" class="menuLateral">
+            <ul class="itensMenu">
+                <img class="user" src="../assets/Imagens/user.png" alt="">
+                <a href=""><li>forum</li></a>
+                <a href=""><li>forum</li></a>
+                <a href=""><li>forum</li></a>
+            </ul>
+        </div>
         <div class="container">
+
+            <input type="checkbox" id="menu-hamburguer" onclick="menuAparecer()">
+            <label for="menu-hamburguer">
+                <div class="menu">
+                    <span class="hamburguer"></span>
+                </div>
+            </label>
+
             <div class="logo">            
-                <a href="index.html"><img class="logoIMG" src="../assets/Imagens/logo sem manga a.jpg" alt="logo"></a>
-            </div>
-            <div class="navbarLog">
-                <ul>
-                    <a href="">
-                        <li></li>
-                    </a>
-                </ul>
+                <a href="../dashboard/dashboard.html"><img class="logoIMG" src="../assets/Imagens/logo sem manga a.jpg" alt="logo"></a>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
     <div class="corpo">
         <div class = "container">
             <div class="impacto">
-                <p class="paragrafo">A liberdade não é apenas um sonho</p>
+                <p class="paragrafo">Aprenda como usar o nosso forum</p>
             </div>
         </div>
             <div class="imgCorpo">
                 <img class="imagemC" src="../assets/Imagens/wal3.jpg" alt="">
-        </div>    
+            </div>    
+
+
+        <div class="comoForum">
+            <div class="container">
+                <H1>Informações</H1>
+
+            </div>
+        </div>
+
+
     </div>
     <div class="footer">
         <div class="container">
@@ -62,16 +91,16 @@
     </div>
     </body>
 </html>
-
 <script>
-    function levarlog(){
-        setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-    }
-    function levarcad(){
-        setTimeout(() => {
-                    window.location = "cadastro.html";
-                }, "2000")
+    var contador = 0
+    function menuAparecer(){
+        contador ++
+        var par = contador %2
+        if(par == 0){
+            menus.style.display = "none"
+        } else{
+            menus.style.display = "flex"
+        }
     }
 </script>
+
