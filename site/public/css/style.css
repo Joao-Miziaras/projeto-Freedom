@@ -14,13 +14,14 @@ body{
     /* border: 2px solid rgb(255, 0, 0); */
     background-color: black;
     display: flex;
+    margin-bottom: 1vh;
 }
 .header .container{
     display: flex;
-
+    flex-direction: row;
 }
 .logoIMG{
-    width: 9vw;
+    width: 5vw;
 }  
 .header .container {
     justify-content: space-between;
@@ -28,8 +29,8 @@ body{
 }
 ul{
     list-style: none;
+    display: flex;
 }
-
 
 
 
