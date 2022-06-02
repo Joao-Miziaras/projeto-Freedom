@@ -10,7 +10,7 @@
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/Imagens/logo sem manga a.jpg">
+    <link rel="icon" href="./assets/Imagens/imagemtitulo.jpg">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
@@ -53,21 +53,20 @@
                 <div class="cardLog">
 
                     <h1>E-mail:</h1>
-                    <input id="email_input" type="email" placeholder="email@gmail.com">
+                    <input class="inpForm" id="email_input" type="email" placeholder="email@gmail.com">
 
                     <h1>Senha:</h1>
-                    <input id="senha_input" type="password" placeholder="******">
+                    <input class="inpForm" id="senha_input" type="password" placeholder="******">
 
                     <button class="botao" onclick="entrar()">Entrar</button>
 
-
-                </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login">
+                    <div id="div_aguardar" class="loading-div">
+                            <img src="./assets/circle-loading.gif" id="loading-gif">
+                        </div>
+            
+                        <div id="div_erros_login">
+            
+                        </div>
 
                 </div>
             </div>
@@ -115,11 +114,10 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Todos os campos em branco";
             finalizarAguardar();
             return false;
-        }
-        else {
+        }else {
             setInterval(sumirMensagem, 5000)
         }
 
@@ -150,7 +148,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -179,12 +177,12 @@
     function levarlog(){
         setTimeout(() => {
                     window.location = "login.html";
-                }, "1000")
+                }, "500")
     }
     function levarcad(){
         setTimeout(() => {
                     window.location = "cadastro.html";
-                }, "1000")
+                }, "500")
     }
 
 </script>

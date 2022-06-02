@@ -8,9 +8,8 @@ nomeUsuario varchar(45),
 nomePessoa varchar(45), 
 email varchar(45), 
 senha varchar(20), 
-dataNasc date, 
-qtdPost int,
-sexo char(1), check (sexo = "M" or sexo = "F" or sexo = "D")
+dataNasc char(10), 
+qtdPost int
 );
 create table post 
 (
@@ -44,3 +43,10 @@ alter table post add foreign key(quemPostou) references usuario (idUsuario);
 alter table post add foreign key(mangaDoPost) references manga (idManga);
 alter table comentario add foreign key(usuarioPostou) references usuario(idUsuario);
 alter table comentario add foreign key(usuarioPostou) references post(idpost);
+alter table usuario add unique (nomeUsuario);
+alter table post add column likes int;
+alter table comentario add column likes int;
+select * from usuario;
+delete from usuario where idusuario = 1;
+delete from usuario where idusuario = 2;
+INSERT INTO usuario (nomePessoa, email, nomeUsuario, senha, dataNasc) VALUES ('joao', 'joao@gmail','joao', 'joao','2022-05-17');

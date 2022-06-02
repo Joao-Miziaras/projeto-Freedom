@@ -12,7 +12,7 @@
     <script src="./js/funcoes.js"></script>
 
 
-    <link rel="icon" href="./assets/Imagens/logo sem manga a.jpg">
+    <link rel="icon" href="./assets/Imagens/imagemtitulo.jpg">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -53,21 +53,23 @@
             <div class="cardscad">
                 <div class="cardLog">
 
-                    
                     <h1>Nome:</h1>
                     <input id="nome_input" type="text" placeholder="Seu nome">
 
                     <h1>E-mail:</h1>
-                    <input id="email_input" type="email" placeholder="email@gmail.com">
+                    <input class="inpForm" id="email_input" type="email" placeholder="email@gmail.com">
+
+                    <h1>Nome da conta:</h1>
+                    <input class="inpForm" id="nomeUsu_input" type="text" placeholder="Este nome irá aparecer a outras pessoas">
 
                     <h1>Data nascimento:</h1>
-                    <input id="datanasc_input" type="text" placeholder="2010-10-10">
+                    <input class="inpForm" id="datanasc_input" type="date" value="" min="1900-01-01" max="2022-06-31" placeholder="2010-10-10"> 
 
                     <h1>Senha:</h1>
-                    <input id="senha_input" type="password" placeholder="******">
+                    <input class="inpForm" id="senha_input" type="password" placeholder="******">
 
                     <h1>Confirmar senha:</h1>
-                    <input id="confirmacao_senha_input" type="password" placeholder="******">
+                    <input class="inpForm" id="confirmacao_senha_input" type="password" placeholder="******">
 
                     <button class="botao" onclick="cadastrar()">Cadastrar</button>
 
@@ -124,15 +126,40 @@
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
-        var datanascVar = datanasc_input.value
+        var datanascVar = datanasc_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || datanascVar == "") {
+        var nomeUsuVar = nomeUsu_input.value;
+        
+        if (nomeVar == "" && emailVar == "" && senhaVar == "" && confirmacaoSenhaVar == "" && datanascVar == "" && nomeUsuVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "(Todos os campos em branco)";
 
             finalizarAguardar();
             return false;
+        } else if(nomeVar == ""){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Nome está em branco)";
+        }  else if(emailVar == ""){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Email está em branco)";
+        }else if(nomeUsuVar == ""){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Nome do usuario está em branco)";
+        } else if(senhaVar == ""){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Senha está em branco)";
+        } else if(datanascVar == ""){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Data de nascimento está em branco)";
+        } else if(confirmacaoSenhaVar == ""){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Sua confirmção de senha está em branco)";
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Suas senhas estão diferentes)";
+        } else if (emailVar.indexOf("@")==-1 || (emailVar.indexOf(".com"))==-1){
+                        cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Verifique seu email)";
         }
         else {
             setInterval(sumirMensagem, 5000)
@@ -150,7 +177,8 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                datanascServer: datanascVar
+                datanascServer: datanascVar,
+                nomeUsuServer : nomeUsuVar
             })
         }).then(function (resposta) {
 
