@@ -125,17 +125,51 @@ p{
 /* How to da index */
 .comoEntrar{
   position: absolute;
-  border: 2px solid cyan;
   display: flex;
   justify-content: center;
+  color: #fff;
 }
 .containerW{
-  justify-content: center;
   width: 80vw;
   margin: auto;
   display: flex;
-  /* border: 2px solid blue; */
-  
+  border: 2px solid blue;
+} 
+
+.social {
+  background-color: #e5e5e5;
+  display: flex;
+}
+
+.social .containerW{
+  justify-content: center;
+}
+
+.box img {
+  width: 170px;
+}
+
+.social .containerW .boxes {
+  display: flex;
+}
+
+.social p {
+  text-align: center;
+}
+
+.box {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.box {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 .footer {
