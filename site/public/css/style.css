@@ -123,10 +123,6 @@ p{
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 /* How to */
-.spa{
-  color: #ffffff;
-  cursor:grab;
-}
 .comofaz{
   display: none;
   background: rgba(244,217,217,0.05);
@@ -141,15 +137,13 @@ p{
   margin-top: 16vh;
   margin-right: 10vw;
   border: 2px solid black;
-  font-size: 7vh;
-  font-weight: 100;
-  letter-spacing: 0.7vw;
+  font-size: 5vh;
+  font-weight: 900;
+  letter-spacing: 0.5vw;
   padding-left: 1vw;
   flex-direction: column;
 }
-.botaoc{
-  margin-bottom: 1vh;
-}
+
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 .footer {
     background-color: #000000;
