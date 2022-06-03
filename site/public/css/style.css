@@ -79,7 +79,7 @@ ul{
 
 .imgCorpo{
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
   }
 .imagemC{
     display: flex;
@@ -122,54 +122,33 @@ p{
     align-items: center;
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
-/* How to da index */
-.comoEntrar{
+/* How to */
+.spa{
+  color: #ffffff;
+  cursor:grab;
+}
+.comofaz{
+  display: none;
+  background: rgba(244,217,217,0.05);
+  box-shadow: 2px 4px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  color: #000000;
+  width: 35vw;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  color: #fff;
-}
-.containerW{
-  width: 80vw;
-  margin: auto;
-  display: flex;
-  border: 2px solid blue;
-} 
-
-.social {
-  background-color: #e5e5e5;
-  display: flex;
-}
-
-.social .containerW{
-  justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .containerW .boxes {
-  display: flex;
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  margin: 10px;
-  display: flex;
+  height: 43vh;
+  justify-content: flex-end;
+  margin-top: 16vh;
+  margin-right: 10vw;
+  border: 2px solid black;
+  font-size: 7vh;
+  font-weight: 100;
+  letter-spacing: 0.7vw;
+  padding-left: 1vw;
   flex-direction: column;
-  align-items: center;
 }
-
-
-.box {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.botaoc{
+  margin-bottom: 1vh;
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 .footer {
@@ -187,13 +166,13 @@ p{
     margin-right: 20vh;
 }
 .footerbar{
-    color: #000000;
+    color: #ffffff;
 }
 a{
     text-decoration: none;
 }
-a:hover{
-    border-bottom: rgb(255, 255, 255);
+li{
+  cursor: pointer;
 }
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 /* barra de scrol diferente */
